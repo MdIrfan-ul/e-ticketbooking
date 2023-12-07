@@ -11,7 +11,8 @@ Welcome to the E-Ticket Booking Website repository! This web application allows 
 
 # Technologies Used
 ### Frontend:
-* ![HTML](C:\Users\mdirfan\Desktop\Python Projects\E-Ticket Booking\e-ticketbooking\static\assets\a1.jpg)
+[![Frontend](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)
+* HTML 
 * CSS
 * JavaScript
 ### Backend:
