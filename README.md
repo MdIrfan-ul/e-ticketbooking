@@ -11,11 +11,12 @@ Welcome to the E-Ticket Booking Website repository! This web application allows 
 
 # Technologies Used
 ### Frontend:
-[![Frontend](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)
+[![Frontend](https://skillicons.dev/icons?i=html,css,js)](https://skillicons.dev)
 * HTML 
 * CSS
 * JavaScript
 ### Backend:
+[![Backend](https://skillicons.dev/icons?i=py)](https://skillicons.dev)
 * Python 
 ### web framework:
 * Flask
