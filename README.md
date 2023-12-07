@@ -29,23 +29,23 @@ Clone the repository:
 Navigate to the project directory:
 `cd e-ticketbooking`
 Create a virtual environment (optional but recommended):
-`python -m venv venv
-`
+`python -m venv venv`
+
 Activate the virtual environment:
 
-* On Windows:`venv\Scripts\activate
-`
+* On Windows:`venv\Scripts\activate`
+
 * On macOS/Linux:`source venv/bin/activate
 `
 Install project dependencies:
-`pip install -r requirements.txt
-`
+`pip install -r requirements.txt`
+
 Set up the MySQL database:
 
 Create a MySQL database and update the database configuration in :`server.py`
 Run the application:
 `flask run`
-Open your web browser and navigate to http://localhost:5000 to access the E-Ticket Booking Website.
+Open your web browser and navigate to `http://localhost:5000` to access the E-Ticket Booking Website.
 ## Contributing
 Feel free to contribute to the project by opening issues or submitting pull requests. Your feedback and suggestions are highly appreciated.
 ## Acknowledgments
