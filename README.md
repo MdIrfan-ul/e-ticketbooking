@@ -16,12 +16,11 @@ Welcome to the E-Ticket Booking Website repository! This web application allows 
 * CSS
 * JavaScript
 ### Backend:
-[![Backend](https://skillicons.dev/icons?i=py)](https://skillicons.dev)
-* Python 
+* Python   [![Backend](https://skillicons.dev/icons?i=py)](https://skillicons.dev)
 ### web framework:
 * Flask
 ### Database
-* MySQL
+* MySQL    [![Database](https://skillicons.dev/icons?=mysql)](https://skillicons.dev)
 ## Getting Started
 To set up the project locally, follow these steps:
 ### Prerequisites
