@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/ticket.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/bus.ico') }}">
+    <title>Ticket Booked Successfully</title>
+</head>
+<body>
+    <div class="container">
+        <div class="ticket">
+            <h1>Booking Confirmation</h1>
+    <p>Thank you for booking your bus ticket!</p>
+            <h1>Ticket Booked Successfully</h1>
+            <img src="static/assets/bus.ico" alt="Bus Icon">
+            <p>Your bus ticket has been booked successfully!</p>
+            <div class="details">
+                <p><strong>First Name: {{ first_name }}</strong></p>
+                <p><strong>Last Name: {{ last_name }}</strong</p>
+                <p><strong>Source: {{ source_location }}</strong></p>
+                <p><strong>Destination: {{ destination_location }}</strong></p>
+                <p><strong>Date of Travel: {{ travel_date }}</strong></p>
+                <p><strong>Number of Passengers: {{ passenger_count }}</strong></p>
+                <p><strong>Selected Bus: {{ selected_bus }}</strong></p>
+                <p><strong>Bus Type: {{ bus_type }}</strong></p>
+                <p><strong>Berth: {{ selected_berth }}</strong></p>
+                <p><strong>Amount: ₹{{ fare_amount }}</strong></p>
+                <p><strong>Bus Number:</strong> ABC123</p>
+                <p><strong>Seat Number:</strong> 15A</p>
+                <p><strong>Departure Time:</strong> <span id="departureTime"></span></p>
+                <p><strong>Date:</strong> <span id="departureDate"></span></p>
+    </div>
+
+    <script>
+        // Get current date and time
+        const currentDate = new Date();
+        const currentDay = currentDate.toLocaleDateString('en-US', { weekday: 'long' });
+        const currentTime = currentDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+        // Display current date and time in the ticket details
+        document.getElementById('departureDate').innerText = `${currentDay}, ${currentDate.toLocaleDateString()}`;
+        document.getElementById('departureTime').innerText = currentTime;
+        setTimeout(function () {
+            window.location.href = "/";
+        }, 15000); // Redirect after 15 seconds
+    </script>
+    <footer>
+        <p>&copy; 2023 Bus Ticket Booking. All rights reserved.</p>
+    </footer>
+</body>
+</html>

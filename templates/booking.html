@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Booking</title>
+    <link rel="stylesheet" href="static/booking.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/bus.ico') }}">
+
+    <style>
+        body {
+            /* Set the background image */
+            background-image: url('static/assets/Bg.png');
+            /* Replace 'your-background-image.jpg' with your image file */
+
+            /* Set other styles as needed */
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-size: cover;
+            /* Adjust as needed (cover, contain, etc.) */
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Bus Ticket Booking</h1>
+    </header>
+
+    <section class="booking-form">
+        <h2>Book Your Bus Ticket</h2>
+        <form action="/" method="POST" autocomplete="off">
+            <label for="fname"> First Name</label>
+            <input type="text" id="fname" name="fname" required>
+            <label for="lname"> Last Name</label>
+            <input type="text" id="lname" name="lname" required>
+
+            <label for="source">Source:</label>
+            <input type="text" id="source" name="source" required>
+
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" name="destination" required>
+
+            <label for="date">Date of Travel:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="passenger-count">Number of Passengers:</label>
+            <select id="passenger-count" name="passenger_count" onchange="updateAmount()" required>
+                <option value="1">1 Passenger</option>
+                <option value="2">2 Passengers</option>
+                <option value="3">3 Passengers</option>
+                <option value="4">4 Passengers</option>
+                <option value="5">5 Passengers</option>
+                <option value="6">6 Passengers</option>
+                <option value="7">7 Passengers</option>
+                <!-- Add more options as needed -->
+            </select>
+            <span id="passenger-error" style="color: red;"></span>
+
+
+            <label for="busSelect">Select Bus:</label>
+            <select id="busSelect" name="busSelect" onchange="updateAmount()">
+                <option value="0">Select a Bus</option>
+                <option value="800">VPS- ₹800</option>
+                <option value="200">Raj Travels - ₹200</option>
+                <option value="300">Raushan Travels - ₹300</option>
+                <option value="500">Sharma Travels - ₹500</option>
+                <option value="700">Ayesha Travels - ₹700</option>
+                <option value="1300">Ahmedabad Fast Service - ₹1300</option>
+                <option value="1000">Kochi Travels - ₹1000</option>
+                <option value="800">KKR Travels- ₹800</option>
+                <option value="2200">Bangalore Bus Tour Travel - ₹2200</option>
+                <option value="2600">Hyderabad Bus Service - ₹2600</option>
+                <option value="3000">Chennai Express - ₹3000</option>
+                <option value="2700">Mumbai Bus Travel - ₹2700</option>
+            </select>
+
+
+            <label for="bus-type">Select Bus Type:</label>
+            <select id="acSelect" name="acSelect" onchange="updateAmount()">
+                <option value="nonac">Non-AC</option>
+                <option value="ac">AC</option>
+            </select>
+            <br>
+            <label for="berthSelect">Select Berth:</label>
+            <select id="berthSelect" name="berthSelect" required>
+                <option value="upper">Upper Berth</option>
+                <option value="lower">Lower Berth</option>
+            </select>
+            <label for="amount">Amount in ₹: </label>
+            <input id="amount" type="number" name="fare" min="0" maxlength="50000" onchange="updateAmount()" readonly
+                required>
+
+
+
+            <button type="submit">Book Now</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Bus Ticket Booking. All rights reserved.</p>
+    </footer>
+    <div class="marquee">
+        <marquee class="marq-design">Bus Details: New Delhi → Per Person ₹400: Shyamoli Bus Parivahan,
+            Siliguri → Per Person ₹200: Raj Bus Service, Kolkata → Per Person
+            ₹300: Raushan Travels, Bihar → Per Person ₹500: Sharma Travels,
+            Rajasthan → Per Person ₹700: Kota Tour's Travel, Ahmedabad → Per
+            Person ₹1300: Ahmedabad Fast Service, Lucknow → Per Person ₹1000:
+            Lucknow Travel, Punjab → Per Person ₹1800: Punjab Bus Service,
+            Bangalore → Per Person ₹2200: Bangalore Bus Tour Travel, Hyderabad →
+            Per Person ₹2600: Hyderabad Bus Service, Chennai → Per Person ₹3000:
+            Chennai Express, Mumbai → Per Person ₹2700: Mumbai Bus Travel
+        </marquee>
+    </div>
+    <script>
+        function validatePassengerCount() {
+            var passengerError = document.getElementById("passenger-error");
+            passengerError.textContent = '';  // Clear any previous error message
+        }
+
+        function updateAmount() {
+            var busSelect = document.getElementById("busSelect");
+            var acSelect = document.getElementById("acSelect");
+            var passengersInput = document.getElementById("passenger-count");
+            var amountInput = document.getElementById("amount");
+
+            var busPrice = parseFloat(busSelect.value);
+
+            if (acSelect.value === "ac") {
+                busPrice *= 2;
+            }
+
+
+            var numPassengers = parseInt(passengersInput.value);
+            var totalAmount = busPrice * numPassengers;
+
+
+            // Set the amount input value to the calculated total amount
+            amountInput.value = totalAmount;
+        }
+    </script>
+</body>
+
+</html>
