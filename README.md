@@ -1,5 +1,5 @@
 # E-ticketbooking
-![E-Ticket Booking Logo](e-ticketbooking\static\assets\bus.ico)
+
 ## Overview
 Welcome to the E-Ticket Booking Website repository! This web application allows users to book electronic tickets for various events. The project is built using HTML, CSS, and JavaScript for the frontend, while the backend is powered by the Python Flask web framework. MySQL is used as the database to store and manage the ticket booking data.
 
@@ -11,13 +11,13 @@ Welcome to the E-Ticket Booking Website repository! This web application allows 
 
 # Technologies Used
 ### Frontend:
-* HTML
+* ![HTML](C:\Users\mdirfan\Desktop\Python Projects\E-Ticket Booking\e-ticketbooking\static\assets\a1.jpg)
 * CSS
 * JavaScript
 ### Backend:
 * Python 
 ### web framework:
-* flask
+* Flask
 ### Database
 * MySQL
 ## Getting Started
