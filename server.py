@@ -4,7 +4,7 @@ import json
 
 
 app = Flask(__name__)
-with open('config.json') as config_file:
+with open('./db_info/config.json') as config_file:
     config = json.load(config_file)
 #configure db
 app.config["MYSQL_HOST"]=config['db_config']['host']
